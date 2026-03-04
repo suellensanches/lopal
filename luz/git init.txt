@@ -1,0 +1,429 @@
+git init
+rm -r -Force .git
+
+*apaga a pasta ocupata dp git pele terminal (Usa para apagar qualquer pasta ocuta
+
+
+
+
+
+PowerShell 7.5.4
+PS C:\Users\AlunoADS1> ls
+
+    Directory: C:\Users\AlunoADS1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          30/01/2026    15:10                .vscode
+d-r--          28/01/2026    14:36                Contacts
+d-r--          11/02/2026    11:05                Desktop
+d-r--          11/02/2026    10:10                Documents
+d-r--          13/02/2026    10:08                Downloads
+d-r--          28/01/2026    14:36                Favorites
+d-r--          28/01/2026    14:36                Links
+d----          04/02/2026    15:54                minha pasta
+d-r--          28/01/2026    14:36                Music
+d-r--          11/02/2026    09:40                OneDrive
+d-r--          06/02/2026    09:25                Pictures
+d----          06/02/2026    13:53                projetos
+d-r--          28/01/2026    14:36                Saved Games
+d-r--          28/01/2026    14:36                Searches
+d----          04/02/2026    16:33                TreinoShell
+d-r--          30/01/2026    08:18                Videos
+-a---          06/02/2026    16:37            947 .bash_history
+-a---          06/02/2026    15:08             30 .gitconfig
+-a---          04/02/2026    16:40           5403 PowerShell
+-a---          04/02/2026    16:40           4441 transcricao.txt
+
+PS C:\Users\AlunoADS1> cd .\projetos\
+PS C:\Users\AlunoADS1\projetos> pwd
+
+Path
+----
+C:\Users\AlunoADS1\projetos
+
+PS C:\Users\AlunoADS1\projetos> git clone https://github.com/suellensanches/praticagit1.git
+Cloning into 'praticagit1'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+PS C:\Users\AlunoADS1\projetos> ls
+
+    Directory: C:\Users\AlunoADS1\projetos
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          13/02/2026    10:47                praticagit1
+d----          06/02/2026    14:09                Primeiro_projeto_git
+d----          04/02/2026    15:50                treino_cmdlets
+-a---          04/02/2026    14:28              0 arquivo2026_backup
+
+PS C:\Users\AlunoADS1\projetos> cd .\praticagit1\
+PS C:\Users\AlunoADS1\projetos\praticagit1> gitstatus
+gitstatus: The term 'gitstatus' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\AlunoADS1\projetos\praticagit1> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\AlunoADS1\projetos\praticagit1> add-Content ".\README.md" "Esta linha foi **adicionada** com o comando *Add-Content*"
+PS C:\Users\AlunoADS1\projetos\praticagit1> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\AlunoADS1\projetos\praticagit1> Set-Content arquivo ""
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/02/2026    10:57              2 arquivo
+-a---          13/02/2026    10:55            116 README.md
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> Remove-Item .\arquivo
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/02/2026    10:55            116 README.md
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> mkdir nova_pasta
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          13/02/2026    11:00                nova_pasta
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> set-content .\nova_pasta|arquivo1 ""
+arquivo1: The term 'arquivo1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\AlunoADS1\projetos\praticagit1> set-content .\nova_pasta|arquivo1 ""
+arquivo1: The term 'arquivo1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\AlunoADS1\projetos\praticagit1> set-content .\nova_pasta\arquivo1 ""
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          13/02/2026    11:04                nova_pasta
+-a---          13/02/2026    10:55            116 README.md
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls .\nova_pasta\
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1\nova_pasta
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/02/2026    11:04              2 arquivo1
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> set-content .\nova_pasta|arquivo2 ""
+arquivo2: The term 'arquivo2' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\AlunoADS1\projetos\praticagit1> set-content .\nova_pasta\arquivo2 ""
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls .\nova_pasta\
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1\nova_pasta
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/02/2026    11:04              2 arquivo1
+-a---          13/02/2026    11:05              2 arquivo2
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> tree
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é 0CCB-75D3
+C:.
+└───nova_pasta
+PS C:\Users\AlunoADS1\projetos\praticagit1> tree /f
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é 0CCB-75D3
+C:.
+│   README.md
+│
+└───nova_pasta
+        arquivo1
+        arquivo2
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> rm .\nova_pasta\
+
+Confirm
+The item at C:\Users\AlunoADS1\projetos\praticagit1\nova_pasta\ has children and the Recurse parameter was not
+specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): n
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          13/02/2026    11:05                nova_pasta
+-a---          13/02/2026    10:55            116 README.md
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> git statud
+git: 'statud' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS C:\Users\AlunoADS1\projetos\praticagit1> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        nova_pasta/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\AlunoADS1\projetos\praticagit1> git add .\README.md
+PS C:\Users\AlunoADS1\projetos\praticagit1> git confing user.name suellensanches
+git: 'confing' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+PS C:\Users\AlunoADS1\projetos\praticagit1> git config user.name suellensanches
+PS C:\Users\AlunoADS1\projetos\praticagit1> git config user.email suellen.ssanches4@gmail.com
+PS C:\Users\AlunoADS1\projetos\praticagit1> git commit -m "Alterando o README"
+[main 33e201d] Alterando o README
+ 1 file changed, 1 insertion(+)
+PS C:\Users\AlunoADS1\projetos\praticagit1> rm .\nova_pasta\
+
+Confirm
+The item at C:\Users\AlunoADS1\projetos\praticagit1\nova_pasta\ has children and the Recurse parameter was not
+specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): n
+PS C:\Users\AlunoADS1\projetos\praticagit1> rm -r nova_pasta
+PS C:\Users\AlunoADS1\projetos\praticagit1> ls
+
+    Directory: C:\Users\AlunoADS1\projetos\praticagit1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          13/02/2026    10:55            116 README.md
+
+PS C:\Users\AlunoADS1\projetos\praticagit1> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 349 bytes | 43.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/suellensanches/praticagit1.git
+   636cf50..33e201d  main -> main
+PS C:\Users\AlunoADS1\projetos\praticagit1> cd
+PS C:\Users\AlunoADS1> ls | where "Desktop"
+PS C:\Users\AlunoADS1> ls | Where "Área de Trabalho"
+PS C:\Users\AlunoADS1> ls
+
+    Directory: C:\Users\AlunoADS1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          30/01/2026    15:10                .vscode
+d-r--          28/01/2026    14:36                Contacts
+d-r--          11/02/2026    11:05                Desktop
+d-r--          11/02/2026    10:10                Documents
+d-r--          13/02/2026    10:08                Downloads
+d-r--          28/01/2026    14:36                Favorites
+d-r--          28/01/2026    14:36                Links
+d----          04/02/2026    15:54                minha pasta
+d-r--          28/01/2026    14:36                Music
+d-r--          11/02/2026    09:40                OneDrive
+d-r--          06/02/2026    09:25                Pictures
+d----          13/02/2026    10:47                projetos
+d-r--          28/01/2026    14:36                Saved Games
+d-r--          28/01/2026    14:36                Searches
+d----          04/02/2026    16:33                TreinoShell
+d-r--          30/01/2026    08:18                Videos
+-a---          06/02/2026    16:37            947 .bash_history
+-a---          06/02/2026    15:08             30 .gitconfig
+-a---          04/02/2026    16:40           5403 PowerShell
+-a---          04/02/2026    16:40           4441 transcricao.txt
+
+PS C:\Users\AlunoADS1> cd Desktop
+PS C:\Users\AlunoADS1\Desktop> cd luz
+Set-Location: Cannot find path 'C:\Users\AlunoADS1\Desktop\luz' because it does not exist.
+PS C:\Users\AlunoADS1\Desktop> cd algoritimo
+PS C:\Users\AlunoADS1\Desktop\algoritimo> cd luz
+PS C:\Users\AlunoADS1\Desktop\algoritimo\luz> tree /f
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é 0CCB-75D3
+C:.
+│   luz.html
+│   luz_desligada.png
+│   luz_ligada.png
+│
+└───OneDrive_2_11-02-2026
+PS C:\Users\AlunoADS1\Desktop\algoritimo\luz> cd ..
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git init
+Initialized empty Git repository in C:/Users/AlunoADS1/Desktop/algoritimo/.git/
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luz/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\AlunoADS1\Desktop\algoritimo> ls -Hidden
+
+    Directory: C:\Users\AlunoADS1\Desktop\algoritimo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h-          13/02/2026    13:03                .git
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> tree /f
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é 0CCB-75D3
+C:.
+└───luz
+    │   luz.html
+    │   luz_desligada.png
+    │   luz_ligada.png
+    │
+    └───OneDrive_2_11-02-2026
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git confing user.name suellensanches
+git: 'confing' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git config user.email suellen.ssanches4@gmail.com
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git config user.name suellensanches
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luz/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\AlunoADS1\Desktop\algoritimo> tree /f
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é 0CCB-75D3
+C:.
+├───luz
+│   │   luz.html
+│   │   luz_desligada.png
+│   │   luz_ligada.png
+│   │
+│   └───OneDrive_2_11-02-2026
+└───onde
+        body.html
+        externo.html
+        head.html
+        meujavascript.js
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        luz/
+        onde/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git add .
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   luz/luz.html
+        new file:   luz/luz_desligada.png
+        new file:   luz/luz_ligada.png
+        new file:   onde/body.html
+        new file:   onde/externo.html
+        new file:   onde/head.html
+        new file:   onde/meujavascript.js
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git commit -m "Commit inicial"
+[master (root-commit) 799b834] Commit inicial
+ 7 files changed, 80 insertions(+)
+ create mode 100644 luz/luz.html
+ create mode 100644 luz/luz_desligada.png
+ create mode 100644 luz/luz_ligada.png
+ create mode 100644 onde/body.html
+ create mode 100644 onde/externo.html
+ create mode 100644 onde/head.html
+ create mode 100644 onde/meujavascript.js
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git remote -v
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git remote add origin https://github.com/suellensanches/lopal.git
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git remote -v
+origin  https://github.com/suellensanches/lopal.git (fetch)
+origin  https://github.com/suellensanches/lopal.git (push)
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git branch -M main
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git push --set-upstream origin
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\AlunoADS1\Desktop\algoritimo> git push --set-upstream origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 513.69 KiB | 13.88 MiB/s, done.
+Total 11 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/suellensanches/lopal.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\AlunoADS1\Desktop\algoritimo>

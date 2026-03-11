@@ -1,4 +1,5 @@
 function calculadora(){
+    while(true) {
     let resultado = 0.0;
     let operando1;
     let operando2;
@@ -15,13 +16,19 @@ function calculadora(){
     } else if ( operador === "*" ){
         resultado = operando1 * operando2;
     } else if ( operador === "/" ){
-      resultado = operando1 / operandor2
-    } else {
-         alert("Operador inválido!")
+        if (operando2 == 0) {
+         alert("Não é possível dividir por zero")
         return
-        
+
+        }
+        resultado = operando1 / operando2;
+    } else {
+        alert("Operador inválido!");
+        return //return força a parada de uma função
     }
 
     alert("resultado: " + 
         operando1 + " " + operador + " " + operando2 + " = " + resultado);
+    }
+
 }
